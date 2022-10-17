@@ -69,12 +69,13 @@ public class Employee {
     /**
      * Calculates the bonus payment.
      * 30TL bonus per hour over 40 working hours per week.
+     * Calculates bonus for 4 weeks (one month)
      * @param workHours
      * @return bonus amount
      */
     private double bonus(double workHours){
         if (workHours>40){
-            return (workHours-40)*30;
+            return (workHours-40) * 30 * 4;
         } else {
             return 0.0;
         }
@@ -84,7 +85,7 @@ public class Employee {
      * Calculates raise in salary based on hire year.
      * Tax and bonus are taken into account!
      * 5% increase in salary if less than 10 years
-     * 10% increase in salary if in between 9 to 20 years
+     * 10% increase in salary if more than 9 and less than 20 years
      * 15% increase in salary if more than 19 years
      * @param hireYear
      * @return salary raise amount
