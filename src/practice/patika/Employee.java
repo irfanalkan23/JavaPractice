@@ -37,10 +37,7 @@ public class Employee {
         this.workHours = workHours;
     }
 
-    /**
-     * Hire year can not be later than 2021 (current date), or before 1921 (100 working years).
-     * @param hireYear
-     */
+    // Hire year can not be later than 2021 (current date), or before 1921 (100 working years).
     public void setHireYear(int hireYear) {
         if (hireYear > 2021 || hireYear < 1921){
             throw new InputMismatchException("Hire year can not be more than 2021 " +
@@ -53,8 +50,8 @@ public class Employee {
      * Calculates the tax to salary
      * No tax if salary is less than 1000TL
      * 3% tax if salary is more than or equal to 1000TL
-     * @param salary as double
-     * @return tax amount as double
+     * @param salary
+     * @return tax amount
      */
     private double tax(double salary){
         double taxAmount;
@@ -74,8 +71,8 @@ public class Employee {
      * @return bonus amount
      */
     private double bonus(double workHours){
-        if (workHours>40){
-            return (workHours-40) * 30 * 4;
+        if (workHours>40.0){
+            return (workHours-40.0) * 30.0 * 4.0;
         } else {
             return 0.0;
         }
